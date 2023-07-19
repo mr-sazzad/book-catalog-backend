@@ -1,6 +1,17 @@
 import { RequestHandler } from "express";
 import { BookService } from "./BookService";
 
+export const createNewBook: RequestHandler = async (req, res, _next) => {
+  const book = req.body;
+  const result = await BookService.createNewBook(book);
+
+  res.status(200).json({
+    success: true,
+    message: "Book created successfully",
+    data: result,
+  });
+};
+
 export const getAllBooks: RequestHandler = async (_req, res, _next) => {
   const result = await BookService.getAllBooks();
 

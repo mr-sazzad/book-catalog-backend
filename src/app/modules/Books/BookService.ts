@@ -1,4 +1,11 @@
+import { IBook } from "./BookInterface";
 import bookModel from "./BookModel";
+
+const createNewBook = async (book: IBook) => {
+  const result = await bookModel.create(book);
+
+  return result;
+};
 
 const getAllBooks = async () => {
   const result = await bookModel.find({});
@@ -14,4 +21,5 @@ const getMostRecentBooks = async () => {
 export const BookService = {
   getAllBooks,
   getMostRecentBooks,
+  createNewBook,
 };
