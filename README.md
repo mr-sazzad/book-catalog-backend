@@ -2,7 +2,7 @@
 
 ## Books
 
-### BASE URL ->  https://book-catalog-backend-sable.vercel.app/
+ BASE URL ->  https://book-catalog-backend-sable.vercel.app/
 
 1. https://book-catalog-backend-sable.vercel.app/books  (GET -ALL BOOKS)
 2. https://book-catalog-backend-sable.vercel.app/books/recent (GET -RECENT BOOKS)
