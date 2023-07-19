@@ -10,3 +10,13 @@ export const getAllBooks: RequestHandler = async (_req, res, _next) => {
     data: result,
   });
 };
+
+export const getMostRecentBooks: RequestHandler = async (_req, res, _next) => {
+  const result = await BookService.getMostRecentBooks();
+
+  res.status(200).json({
+    success: true,
+    message: "Book Retrieve successfully",
+    data: result,
+  });
+};
