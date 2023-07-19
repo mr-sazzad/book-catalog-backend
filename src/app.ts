@@ -1,6 +1,7 @@
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import express from "express";
+import booksRouter from "./app/modules/Books/BookRouts";
 
 const app = express();
 
@@ -15,5 +16,7 @@ app.get("/", (_req, res, _next) => {
     statusCode: res.statusCode,
   });
 });
+
+app.use("/books", booksRouter);
 
 export default app;
