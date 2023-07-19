@@ -2,6 +2,8 @@
 
 ## Books
 
+### BASE URL ->  https://book-catalog-backend-sable.vercel.app/
+
 1. https://book-catalog-backend-sable.vercel.app/books  (GET -ALL BOOKS)
 2. https://book-catalog-backend-sable.vercel.app/books/recent (GET -RECENT BOOKS)
 3. https://book-catalog-backend-sable.vercel.app/books/64b6c902c60a07021bf1dbe4 (GET -SINGLE BOOK)
