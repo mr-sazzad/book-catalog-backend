@@ -32,6 +32,21 @@ export const getMostRecentBooks: RequestHandler = async (_req, res, _next) => {
   });
 };
 
+export const editSingleBook: RequestHandler = async (req, res, _next) => {
+  const id = req.params.id;
+  const payload = req.body;
+
+  const actualPayload = payload.formattedData;
+
+  const result = await BookService.editSingleBook(id, actualPayload);
+
+  res.status(200).json({
+    success: true,
+    message: "Book edited successfully",
+    data: result,
+  });
+};
+
 export const getSingleBook: RequestHandler = async (req, res, _next) => {
   const id = req.params.id;
 

@@ -24,9 +24,18 @@ const getSingleBook = async (id: string) => {
   return result;
 };
 
+const editSingleBook = async (id: string, payload: Partial<IBook>) => {
+  const result = await bookModel.findByIdAndUpdate({ _id: id }, payload, {
+    new: true,
+  });
+
+  return result;
+};
+
 export const BookService = {
   getAllBooks,
   getMostRecentBooks,
   createNewBook,
   getSingleBook,
+  editSingleBook,
 };
