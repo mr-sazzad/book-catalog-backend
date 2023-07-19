@@ -47,6 +47,18 @@ export const editSingleBook: RequestHandler = async (req, res, _next) => {
   });
 };
 
+export const deleteSingleBook: RequestHandler = async (req, res, _next) => {
+  const id = req.params.id;
+
+  const result = await BookService.deleteSingleBook(id);
+
+  res.status(200).json({
+    success: true,
+    message: "Book deleted successfully",
+    data: result,
+  });
+};
+
 export const getSingleBook: RequestHandler = async (req, res, _next) => {
   const id = req.params.id;
 

@@ -1,6 +1,7 @@
 import { Router } from "express";
 import {
   createNewBook,
+  deleteSingleBook,
   editSingleBook,
   getAllBooks,
   getMostRecentBooks,
@@ -18,5 +19,7 @@ router.post("/new-book", createNewBook);
 router.get("/:id", getSingleBook);
 
 router.put("/:id", editSingleBook);
+
+router.delete("/:id", deleteSingleBook);
 
 export default router;

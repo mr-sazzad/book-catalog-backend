@@ -32,10 +32,17 @@ const editSingleBook = async (id: string, payload: Partial<IBook>) => {
   return result;
 };
 
+const deleteSingleBook = async (id: string) => {
+  const result = await bookModel.findByIdAndDelete({ _id: id });
+
+  return result;
+};
+
 export const BookService = {
   getAllBooks,
   getMostRecentBooks,
   createNewBook,
   getSingleBook,
   editSingleBook,
+  deleteSingleBook,
 };
