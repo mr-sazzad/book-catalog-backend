@@ -18,8 +18,15 @@ const getMostRecentBooks = async () => {
   return result;
 };
 
+const getSingleBook = async (id: string) => {
+  const result = await bookModel.findById(id);
+
+  return result;
+};
+
 export const BookService = {
   getAllBooks,
   getMostRecentBooks,
   createNewBook,
+  getSingleBook,
 };

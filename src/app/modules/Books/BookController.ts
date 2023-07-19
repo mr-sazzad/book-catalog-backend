@@ -31,3 +31,15 @@ export const getMostRecentBooks: RequestHandler = async (_req, res, _next) => {
     data: result,
   });
 };
+
+export const getSingleBook: RequestHandler = async (req, res, _next) => {
+  const id = req.params.id;
+
+  const result = await BookService.getSingleBook(id);
+
+  res.status(200).json({
+    success: true,
+    message: "Book Retrieve successfully",
+    data: result,
+  });
+};
