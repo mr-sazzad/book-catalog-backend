@@ -1,5 +1,5 @@
 import mongoose, { Schema } from "mongoose";
-import { IBook } from "./BookInterface";
+import { IBook, IComment } from "./BookInterface";
 
 const BookSchema = new Schema<IBook>(
   {
@@ -18,6 +18,18 @@ const BookSchema = new Schema<IBook>(
     PublishedDate: {
       type: String,
       required: true,
+    },
+    Image: {
+      type: String,
+      required: true,
+    },
+    Comment: {
+      type: [
+        new Schema<IComment>({
+          user: { type: String },
+          comment: { type: String },
+        }),
+      ],
     },
   },
   {

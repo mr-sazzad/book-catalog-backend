@@ -4,8 +4,10 @@ import {
   deleteSingleBook,
   editSingleBook,
   getAllBooks,
+  getAllComments,
   getMostRecentBooks,
   getSingleBook,
+  postComment,
 } from "./BookController";
 
 const router = Router();
@@ -18,7 +20,11 @@ router.post("/new-book", createNewBook);
 
 router.get("/:id", getSingleBook);
 
-router.put("/:id", editSingleBook);
+router.post("/:id/comment", postComment);
+
+router.get("/:id/comments", getAllComments);
+
+router.patch("/:id", editSingleBook);
 
 router.delete("/:id", deleteSingleBook);
 

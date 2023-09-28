@@ -38,6 +38,30 @@ const deleteSingleBook = async (id: string) => {
   return result;
 };
 
+const postComment = async (id: string, payload: string) => {
+  const book = await bookModel.findById({ _id: id });
+
+  if (!book) {
+    throw new Error(`Book not found`);
+  }
+
+  const newComment = {
+    user: id,
+    comment: payload,
+  };
+
+  book.Comment.push(newComment);
+
+  await book.save();
+
+  return book;
+};
+
+const getAllComments = async (id: string) => {
+  const book = await bookModel.findById({ _id: id });
+  return book?.Comment;
+};
+
 export const BookService = {
   getAllBooks,
   getMostRecentBooks,
@@ -45,4 +69,6 @@ export const BookService = {
   getSingleBook,
   editSingleBook,
   deleteSingleBook,
+  postComment,
+  getAllComments,
 };

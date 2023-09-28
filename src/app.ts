@@ -17,6 +17,6 @@ app.get("/", (_req, res, _next) => {
   });
 });
 
-app.use("/books", booksRouter);
+app.use("/api/v1/books", booksRouter);
 
 export default app;

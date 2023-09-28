@@ -3,6 +3,7 @@ import { BookService } from "./BookService";
 
 export const createNewBook: RequestHandler = async (req, res, _next) => {
   const book = req.body;
+
   const result = await BookService.createNewBook(book);
 
   res.status(200).json({
@@ -67,6 +68,31 @@ export const getSingleBook: RequestHandler = async (req, res, _next) => {
   res.status(200).json({
     success: true,
     message: "Book Retrieve successfully",
+    data: result,
+  });
+};
+
+export const postComment: RequestHandler = async (req, res, _next) => {
+  const id = req.params.id;
+  const payload = req.body;
+
+  const result = await BookService.postComment(id, payload.data.review);
+
+  res.status(200).json({
+    success: true,
+    message: "comment added successfully",
+    data: result,
+  });
+};
+
+export const getAllComments: RequestHandler = async (req, res, _next) => {
+  const id = req.params.id;
+
+  const result = await BookService.getAllComments(id);
+
+  res.status(200).json({
+    success: true,
+    message: "comment retrieved successfully",
     data: result,
   });
 };

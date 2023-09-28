@@ -8,7 +8,7 @@ async function ConnectionString() {
     console.log(`Database Connected Successfully 🎊 `);
 
     app.listen(config.port, () => {
-      console.log(`Book Catalog listening on port 👉 ${config.port}`);
+      console.log(`Book Catalog listening on http://localhost:${config.port}`);
     });
   } catch (err) {
     console.log("Failed to connect with database", err);
