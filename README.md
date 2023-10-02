@@ -4,9 +4,9 @@
 
  BASE URL   https://book-catalog-backend-sable.vercel.app/
 
-1. https://book-catalog-backend-sable.vercel.app/books  (GET -ALL BOOKS)
-2. https://book-catalog-backend-sable.vercel.app/books/recent (GET -RECENT BOOKS)
-3. https://book-catalog-backend-sable.vercel.app/books/64b6c902c60a07021bf1dbe4 (GET -SINGLE BOOK)
-4. https://book-catalog-backend-sable.vercel.app/books/64b6c902c60a07021bf1dbe4  (PUT -UPDATE A BOOK)
-5. https://book-catalog-backend-sable.vercel.app/books/64b6c902c60a07021bf1dbe4 (DELETE -DELETE A BOOK)
-6. https://book-catalog-backend-sable.vercel.app/books/new-bok (POST -CREATE NEW BOOK)
+1. https://book-catalog-backend-sable.vercel.app/api/v1/books  (GET -ALL BOOKS)
+2. https://book-catalog-backend-sable.vercel.app/api/v1/books/recent (GET -RECENT BOOKS)
+3. https://book-catalog-backend-sable.vercel.app/api/v1/books/:id (GET -SINGLE BOOK)
+4. https://book-catalog-backend-sable.vercel.app/api/v1/books/:id  (PUT -UPDATE A BOOK)
+5. https://book-catalog-backend-sable.vercel.app/api/v1/books/:id (DELETE -DELETE A BOOK)
+6. https://book-catalog-backend-sable.vercel.app/api/v1/books/new-bok (POST -CREATE NEW BOOK)
